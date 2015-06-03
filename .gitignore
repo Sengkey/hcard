@@ -1,0 +1,7 @@
+.Spotlight*
+.DS_Store*
+.Trash*
+*/.Trash
+.Temporary*
+.fseventsd*
+*/.DS_Store

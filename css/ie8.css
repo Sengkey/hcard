@@ -1,0 +1,49 @@
+body {
+  zoom :1;
+  line-height:1.01;
+}
+div {
+	width: 100%;
+}
+.container
+{
+    display:block;
+    width: 100%;
+    position: relative;
+}
+.row
+{
+    height: 100%;
+    display: block;
+}
+.row div {
+    margin:0; /*IE6 Hack*/
+    padding:0; /*IE6 Hack*/
+}
+body div div div.formbox {
+    padding-left:10px\0/ !important;
+    padding-right:10px\0/ !important;
+}
+body div div div.formbox div form div.col-xs-6, 
+body div div div.formbox div form div.col-xs-12,
+body div div div.formbox div form div h1,
+body div div div.formbox div form div h3 {
+    padding-left:3px\0/ !important;
+    padding-right:3px\0/ !important;
+}
+body div div div.formbox div form div.ie8 {
+    padding-top:10px\0/ !important;
+    padding-bottom:10px\0/ !important;
+}
+
+body div div div.previewbox {
+    padding-top:115px\0/ !important;
+    padding-bottom:115px\0/ !important;
+}
+
+table#hc_table1 tr td {
+    height: 37px !important;
+}
+
+
+

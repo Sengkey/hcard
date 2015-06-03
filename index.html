@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>hCard Preview</title>
+    <link href="css/hcard.css" rel="stylesheet" type="text/css">
+    <link href="css/hcard-theme.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/ie10.css">
+	
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+    <!--[if lt IE 10]>
+      <link rel="stylesheet" href="css/ie8.css">	
+      <script src="js/html5shiv.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!--[if !IE]><!--><script>
+	if (/*@cc_on!@*/false) {
+	    document.documentElement.className+=' ie10';
+	}
+	</script><!--<![endif]-->
+
+	<script type='text/javascript' src="js/jquery-1.8.3.js" ></script>
+	<script type='text/javascript' src="js/angular-1.2.27.min.js"></script> 
+	<script type='text/javascript' src="js/bootstrap.min.js"></script>
+	<script type='text/javascript' src="js/main.js"></script>
+	<script src="//localhost:35729/livereload.js"></script>
+
+</head>
+<body id="ng-app" ng-app="myApp" ng-controller="ResponsiveController">
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-6">
+					<div class="formbox">
+			  			<div class="row">
+			  			
+			  			<div class="col-xs-12">
+			  			<form role="form" class="css-form" novalidate>
+			  			  <div class="col-xs-12">
+							  	  <h1>hCard Builder</h1>	
+								  <h3>Personal Details</h3>
+						  </div>
+						  <div class="form-group col-xs-6">
+						    <label for="inputGiven" class="control-label">Given Name</label>
+						    <div class="ie8">
+						      <input type="text" class="form-control" id="inputGiven" ng-model="inputGiven" maxlength="25" placeholder="" required />
+						    </div>
+						  </div>
+						  <div class="form-group col-xs-6">
+						    <label for="inputSurname" class="control-label">Surname</label>
+						    <div class="ie8">
+						      <input type="text" class="form-control" id="inputSurname" ng-model="inputSurname" maxlength="25" placeholder="" required />
+						    </div>
+						  </div>
+						  <div class="form-group col-xs-6">
+						    <label for="inputEmail" class="control-label">Email</label>
+						    <div class="ie8">
+						      <input type="email" class="form-control" name="inputEmail" id="inputEmail" maxlength="50" ng-model="$scope.inputEmail" placeholder="" required />
+						    </div>
+						  </div>
+						  <div class="form-group col-xs-6">
+						    <label for="inputPhone" class="control-label">Phone</label>
+						   <div class="ie8">
+						      <input type="text" class="form-control" id="inputPhone" ng-model="inputPhone" maxlength="10" placeholder="" required />
+						    </div>
+						  </div>	
+						  <div class="col-xs-12">
+						  <h3>Address</h3>
+						  </div>
+						  <div class="form-group col-xs-6">
+						    <label for="inputHouse" class="control-label">House Name or #</label>
+						    <div class="ie8">
+						      <input type="text" class="form-control" id="inputHouse" ng-model="inputHouse" maxlength="10" placeholder="" required />
+						    </div>
+						  </div>
+						  <div class="form-group col-xs-6">
+						    <label for="inputStreet" class="control-label">Street</label>
+						    <div class="ie8">
+						      <input type="text" class="form-control" id="inputStreet" ng-model="inputStreet" maxlength="30" placeholder="" required />
+						    </div>
+						  </div>
+						  <div class="form-group col-xs-6">
+						    <label for="inputSuburb" class="control-label">Suburb</label>
+						    <div class="ie8">
+						      <input type="text" class="form-control" id="inputSuburb" ng-model="inputSuburb" maxlength="25" placeholder="" required />
+						    </div>
+						  </div>
+						  <div class="form-group col-xs-6">
+						    <label for="inputState" class="control-label">State</label>
+						    <div class="ie8">
+						      <!-- <input type="text" class="form-control" id="inputState" ng-model="inputState" placeholder="NSW"> -->
+						      <select class="form-control" id="inputState" ng-model="myResp" ng-options="inputState.label for inputState in inputStates">
+						      	
+						      </select> 
+						    </div>
+						  </div>
+						  <div class="form-group col-xs-6">
+						    <label for="inputPostcode" class="control-label">Postcode</label>
+						    <div class="ie8">
+						      <input type="text" class="form-control" id="inputPostcode" ng-model="inputPostcode" placeholder="" maxlength="4" oninput="maxLengthCheck(this)" required />
+						    </div>
+						  </div>
+						  <div class="form-group col-xs-6">
+						    <label for="inputCountry" class="control-label">Country</label>
+						    <div class="ie8">
+						      <input type="text" class="form-control" id="inputCountry" ng-model="inputCountry" placeholder="" required />
+						    </div>
+						  </div>
+						  <div class="col-xs-12">
+						  	<p align="center">
+						  	<button type="submit" class="btn btn-success btn-lg box-shadow">Create hCard</button>
+						    </p>
+						  </div>
+
+						</form>
+						</div><!--/. sm-12 -->
+
+						</div><!--/. row -->
+			  		</div><!--/. formbox -->
+			</div>
+
+			<div class="col-sm-6 previewbg">
+				<div class="previewbox">
+			  
+			  		
+			  		
+			  		<div class="hcard">
+			  			<strong>hCard Preview</strong>
+				  		<h3 class="hc_head">{{inputGiven}} {{inputSurname}} </h3>
+	  					<div class="hc_table">
+			  			<table id="hc_table1" width="100%" border="0" cellpadding="0" cellspacing="0">
+			  				<tr>
+			  					<td class="hc_label">
+			  						Email
+			  					</td>
+			  					<td colspan="3" class="hc_value">
+			  						{{$scope.inputEmail}}
+			  					</td>
+			  				</tr>
+			  				<tr>
+			  					<td class="hc_label">
+			  						Phone
+			  					</td>
+			  					<td colspan="3" class="hc_value">
+			  						{{inputPhone | tel}}
+			  					</td>
+			  				</tr>
+			  				<tr>
+			  					<td class="hc_label">
+			  						Address
+			  					</td>
+			  					<td colspan="3" class="hc_value">
+			  						{{inputHouse}} {{inputStreet}}
+			  					</td>
+			  				</tr>
+			  				<tr>
+			  					<td class="hc_label">
+			  						
+			  					</td>
+			  					<td colspan="3" class="hc_value">
+			  						{{inputSuburb}}<span ng-hide="myResp.label == null">, </span>{{myResp.label}}
+			  					</td>
+			  				</tr>
+			  				<tr>
+			  					<td class="hc_label" style="width:22%">
+			  						Postcode
+			  					</td>
+			  					<td class="hc_value" style="width:22%">
+			  						{{inputPostcode}}
+			  					</td>
+			  					<td class="hc_label" style="width:23%">
+			  						Country
+			  					</td>
+			  					<td class="hc_value" style="width:33%">
+			  						{{inputCountry}}
+			  					</td>
+			  				</tr>		
+			  			</table>
+			  			</div><!--/. hc_table -->		
+			  		</div><!--/. hcard -->	
+
+			  	</div>
+			</div>
+
+
+		</div><!--/. row -->
+	</div><!--/. container -->
+
+
+</body>
+</html>

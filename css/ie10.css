@@ -1,0 +1,5 @@
+.ie10 .previewbox {
+/* IE10+ CSS styles go here */
+    padding-top:115px !important;
+    padding-bottom:115px !important;
+}

@@ -1,0 +1,252 @@
+// Core variables and mixins
+@import "variables.less";
+@import "mixins.less";
+
+// Reset
+@import "normalize.less";
+@import "print.less";
+
+// Core CSS
+@import "scaffolding.less";
+@import "type.less";
+@import "code.less";
+@import "grid.less";
+@import "tables.less";
+@import "forms.less";
+@import "buttons.less";
+
+// Components
+@import "component-animations.less";
+// @import "glyphicons.less";
+@import "icon.less";
+// @import "dropdowns.less";
+// @import "button-groups.less";
+// @import "input-groups.less";
+// @import "navs.less";
+// @import "navbar.less";
+// @import "breadcrumbs.less";
+// @import "pagination.less";
+// @import "pager.less";
+// @import "labels.less";
+// @import "badges.less";
+// @import "jumbotron.less";
+// @import "thumbnails.less";
+// @import "alerts.less";
+// @import "progress-bars.less";
+// @import "media.less";
+// @import "list-group.less";
+// @import "panels.less";
+// @import "wells.less";
+@import "close.less";
+@import "load8.less";
+
+// Components w/ JavaScript
+@import "modals.less";
+// @import "tooltip.less";
+// @import "popovers.less";
+// @import "carousel.less";
+// @import "datepicker.less";
+// @import "colorpicker.less";
+// @import "wysihtml5.less";
+// @import "tagsinput.less";
+
+// Utility classes
+@import "utilities.less";
+@import "responsive-utilities.less";
+
+// Custom Fonts
+// @import url(http://fonts.googleapis.com/css?family=Open+Sans:700,400,300);
+// @custom-font-family: 'Open Sans',Tahoma, sans-serif ;
+
+
+// Custom Frontpage is here
+.href {
+	cursor: pointer;
+}
+
+.formbox {
+	background-color: #fff;
+	// min-height: 0;
+	//Angular Style
+	.css-form {
+		input.ng-invalid-required {
+		    // background-color: lighten(#FFA500, 45.5%);
+		    // border: 1px solid @input-border;
+		}
+		input.ng-invalid-email, input.ng-dirty {
+		    background-color: lighten(#ff0000, 47.5%);
+		    border: 1px solid @input-border;
+		}
+		input.ng-valid {
+		    background-color: @input-bg;
+		    border: 1px solid @input-border;
+		}
+	}
+
+
+	h1 {
+		font-size: ceil((@font-size-base * 2.15));
+	}
+	h3 {
+		color: @gray-light;
+		font-size: ceil((@font-size-base * 0.75)); 
+		text-transform: uppercase;
+		font-weight: normal;
+		border-bottom:1px solid @gray-light;
+		padding-bottom:2px;
+		margin:20px 0;
+	}
+	label {
+		font-size: ceil((@font-size-base * 0.85)); 
+		font-weight: normal;
+		text-transform: uppercase;
+		color:@brand-primary;
+	}
+	.btn {
+		font-family: Verdana,sans-serif;
+		letter-spacing: 1px;
+	}
+}
+
+.previewbg {
+	background-color: #e1e4e7;
+	// padding: 14px 100px;
+	.previewbox {
+		text-align: center;
+		padding:10px 0;
+
+		min-height: 0%;
+
+	    .hcard {
+	    	text-align: left;
+	    	margin: 10px auto;
+	    	display: block;
+	    	// width: 430px;
+	    	width:98%;
+			padding: 0 1%;
+	    	strong {
+	    		display: block;
+	    		padding:0;
+	    		margin-bottom:1em;
+	    		text-align: right;
+	    		color: #95a5a6;
+				font-size: ceil((@font-size-base * 1.25)); 
+				text-transform: uppercase;
+				font-weight: normal;
+	    	}
+	    	
+			h3.hc_head {
+				background-color: @brand-primary;
+				display:block;	
+				color:@gray-lighter;
+				font-family: @font-family-serif;
+				font-weight: normal;
+				padding:1em 1em;
+				margin: 0;
+				height: 70px;
+			}
+			.hc_table {
+				background-color: #fff;
+				padding:1.5em;
+				text-align: center;
+				table {
+		    		// background-color: #eee;
+		    		tr {
+		    			border-bottom: 1px solid #ccc;
+		    			td {
+		    				text-align: left;
+		    				padding:0.4em 0 0;
+		    				height: 34px;
+		    			}
+		    			td.hc_label {
+		    				vertical-align: bottom;
+		    				border-bottom: 0;
+							font-size: ceil((@font-size-base * 0.75)); 
+							font-weight: normal;
+							text-transform: uppercase;
+							color:@brand-primary;
+							vertical-align: bottom;
+							padding-right:5px;
+							line-height: 19px;
+		    			}
+		    			td.hc_value {
+		    				vertical-align: bottom;
+		    				border-bottom: 0;
+		    				font-size: @font-size-large;
+							font-family: @font-family-serif;
+							line-height: @line-height-base;
+							color: @input-color;
+							vertical-align: bottom;
+							word-wrap: break-word;
+
+		    			}
+		    		}
+		    	} //.table
+			}
+	    	
+	    } //.hcard
+	} //.previewbox
+}//.previewbg
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) { 
+	.formbox { 
+		min-height: 100% !important;  /* Fallback for browsers do NOT support vh unit */
+		min-height: 100vh !important; /* These two lines are counted as one :-)       */
+
+		display: flex !important;
+		align-items: center !important;
+	}
+	.previewbox { 
+		min-height: 100% !important;  /* Fallback for browsers do NOT support vh unit */
+		min-height: 100vh !important; /* These two lines are counted as one :-)       */
+
+		display: flex !important;
+		align-items: center !important;
+		.hcard {
+			width:98% !important;
+			padding: 0 1% !important;
+		}
+		.hc_table {
+			table {
+				tr {
+					border-bottom: 0 !important;
+					td{
+						
+					}
+					td.hc_label {
+						border-bottom: 1px solid #ccc !important;
+					}
+					td.hc_value {
+						border-bottom: 1px solid #ccc !important;
+					}
+				}
+			}
+		}
+	}
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) { 
+	.previewbox {
+		.hcard {
+			width:430px !important;
+		}
+	}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {  
+	.formbox {
+		padding: 0 3em;
+	}
+	.previewbox {
+		padding: 3em 0;
+	}
+}
+
+
